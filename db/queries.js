@@ -5,7 +5,7 @@ const getAPI = (url) =>{
     axios.get(url)
     .then(res =>{
         let listOfData = res.data
-        for(let i = 0; i < listOfData.length; i++){
+        for(let i = 0; i < 100; i++){
             let item = listOfData[i];
             let bbl = item.bbl;
             let boro = item.boro;
@@ -61,7 +61,7 @@ filterByBorough = (req, res, next) =>{
         res.status(200).json({
             status:'success',
             data:data,
-            message: req.params.boro + ' is selected.'
+            message: boro + ' is selected.'
         })
     })
     .catch(err=>{

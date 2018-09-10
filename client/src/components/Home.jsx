@@ -1,18 +1,12 @@
 import React, {Component} from 'react';
+import axios from 'axios';
+import {Route} from 'react-router-dom';
 
-class Home extends Component{
-    constructor(){
-        super()
-        this.state = {
-
-        }
-    }
-    render(){
-        return(
-            <div>
-                <h1>NYC Greenery</h1>
-            </div>
-        )
-    }
+const Home = () =>{
+    return(
+        <div>
+            <h1>NYC Greenery</h1>
+        </div>
+    )
 }
 export default Home;
