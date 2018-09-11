@@ -1,0 +1,26 @@
+ul li{
+    list-style-type: none;
+}
+.gardens{
+    
+}
+.boroughs{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.filter-boro{
+    display:flex;
+}
+.gardens-locations{
+    flex-direction:row;
+    text-align:left;
+    flex-grow:1;
+    padding:2%;
+}
+.gardens-filtered{
+    flex-direction:row;
+    text-align:left;
+    flex-grow:1;
+    padding:2%;
+}

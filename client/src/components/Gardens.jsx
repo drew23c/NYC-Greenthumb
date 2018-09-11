@@ -31,7 +31,6 @@ class Gardens extends Component{
             this.setState({
                 filtered: res.data.data
             })
-            console.log(res.data.data)
         })
     }
     renderGardenLocations = () =>{
