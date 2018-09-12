@@ -1,10 +1,8 @@
-import React, {Component} from 'react';
-import axios from 'axios';
-import {Route} from 'react-router-dom';
+import React from 'react';
 
 const Home = () =>{
     return(
-        <div>
+        <div className="homepage">
             <h1>NYC Greenery</h1>
         </div>
     )

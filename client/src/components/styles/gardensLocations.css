@@ -1,13 +1,10 @@
-ul li{
-    list-style-type: none;
-}
 .gardens{
-    
+    overflow:auto;
 }
 .boroughs{
     display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    flex-flow: row wrap;
+    justify-content:space-between;
 }
 .filter-boro{
     display:flex;

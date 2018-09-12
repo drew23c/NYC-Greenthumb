@@ -1,7 +1,16 @@
 .App {
   text-align: center;
+  background:url('components/images/bloom-blossom-flora-130154.jpg') no-repeat center center fixed;
+  background-size:cover;
+  height:100vh;
 }
-
+a{
+  text-decoration:none;
+  color:yellow;
+}
+h1{
+  color:yellow;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
