@@ -6,7 +6,7 @@ import AllLocations from './GardenLocations';
 class Gardens extends Component{
     constructor(){
         super()
-        this.boro=['', 'M', 'Q', 'B', 'X'],
+        this.boro=['', 'B','M','Q','R','X'],
         this.state = {
             locations:[],
             filtered:[]
