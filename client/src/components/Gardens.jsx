@@ -9,7 +9,7 @@ class Gardens extends Component{
         this.boro=['', 'B','M','Q','R','X'],
         this.state = {
             locations:[],
-            filtered:[]
+            filtered:[],
         }
     }
     componentDidMount(){
@@ -34,7 +34,7 @@ class Gardens extends Component{
         })
     }
     renderGardenLocations = () =>{
-        let {locations, filtered} = this.state;
+        let {locations, filtered, display} = this.state;
         return(
             <AllLocations
                 locations = {locations}

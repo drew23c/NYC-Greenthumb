@@ -72,26 +72,7 @@ filterByBorough = (req, res, next) =>{
     })
 }
 
-searchByAddress = (req, res, next) =>{
-    let address = req.params.address
-    db.any('SELECT * FROM community WHERE address = $1', address)
-    .then(data =>{
-        res.status(200).json({
-            status:'success',
-            data:data,
-            message:'found it!'
-        })
-    })
-    .catch(err =>{
-        res.status(500).json({
-            status:'failed',
-            message:err
-        })
-    })
-}
-
 module.exports={
     allLocations,
     filterByBorough,
-    searchByAddress
 }

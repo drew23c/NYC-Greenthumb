@@ -1,4 +1,11 @@
 .homepage img{
-    height:60%;
-    width:60%;
+    height:30%;
+    width:30%;
+}
+.homepage .introduction{
+    margin-top:5%;
+    width:30%;
+    text-align:left;
+    margin-left:35%;
+    font-size:120%;
 }

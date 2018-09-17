@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/gardensLocations.css';
 
-const AllLocations = ({locations, boro, filter, change, boroResult}) =>{
+const AllLocations = ({locations, boro, filter, change, boroResult, display}) =>{
     return(
         <div className="gardens">
             <div className="select-filter">

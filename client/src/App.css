@@ -1,12 +1,19 @@
 .App {
   text-align: center;
   height:100vh;
+  background-color:#F5FFFA;
+}
+.navigation a{
+  font-size:140%;
 }
 a{
   text-decoration:none;
 }
 h1{
   color:brown;
+}
+.App .navigation a{
+  margin:0 1% 0 1%;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
