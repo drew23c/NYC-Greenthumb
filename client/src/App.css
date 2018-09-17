@@ -1,7 +1,9 @@
+@import "https://fonts.googleapis.com/css?family=Noto+Sans";
 .App {
   text-align: center;
   height:100vh;
   background-color:#F5FFFA;
+  font-family: 'Noto Sans', sans-serif;
 }
 .navigation a{
   font-size:140%;
