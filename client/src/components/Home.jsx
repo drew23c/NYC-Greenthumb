@@ -6,7 +6,7 @@ import Intro from './Intro';
 const Home = () =>{
     return(
         <div className="homepage">
-            <h1>NYC Greenery</h1>
+            <h1>NYC Community Gardens</h1>
             <img src={gardenIMG} alt="gardens image" />
             <Intro/>
         </div>
