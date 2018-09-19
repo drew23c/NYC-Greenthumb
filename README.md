@@ -5,3 +5,11 @@ Filter by boro to find a garden near you.<br/>
 Enjoy the best green experience NYC to offer!
 
 ![NYC Community Garden Home Page](/screenshots/home.png)
+
+## Feature:
+<ul>
+  <li>Filter gardens by boro</li>
+</ul>
+
+Gardens:
+![Gardens Page](/screenshots/gardens.png)
