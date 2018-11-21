@@ -5,6 +5,7 @@ CREATE DATABASE locations;
 
 CREATE TABLE community(
     id SERIAL PRIMARY KEY,
+    propid VARCHAR,
     bbl VARCHAR,
     boro TEXT,
     address VARCHAR,
