@@ -8,6 +8,8 @@ var cors = require('cors');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./db/schema');
 
+var index = require('./routes/index');
+
 var app = express();
 
 // view engine setup
@@ -26,6 +28,8 @@ app.use('/graphql', graphqlHTTP({
   schema,
   graphiql:true
 }))
+
+app.use('/', index);
 
 
 // catch 404 and forward to error handler

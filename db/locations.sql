@@ -13,7 +13,7 @@ CREATE TABLE community(
     cross_streets VARCHAR,
     latitude VARCHAR,
     longitude VARCHAR,
-    neighborhood VARCHAR,
+    neighborhoodname VARCHAR,
     nta VARCHAR,
-    postal_code VARCHAR
+    postalcode VARCHAR
 );
