@@ -1,56 +1,43 @@
-import React, {Component} from 'react';
-import axios from 'axios';
-import {Route} from 'react-router-dom';
-import AllLocations from './GardenLocations';
+import React, {Component, Fragment} from 'react';
+import gql from 'graphql-tag';
+import {Query} from 'react-apollo';
+import GardenLocation from './GardenLocations';
 
-class Gardens extends Component{
-    constructor(){
-        super()
-        this.boro=['', 'B','M','Q','R','X'],
-        this.state = {
-            locations:[],
-            filtered:[],
+const LAUNCH_LOCATIONS = gql `
+    query LOCATIONS{
+        locations{
+            boro
+            address
+            garden_name
+            cross_streets
+            latitude
+            longitude
+            neighborhoodname
+            postcode
         }
     }
-    componentDidMount(){
-        axios.get('http://localhost:3100/all')
-        .then(res=>{
-            this.setState({
-                locations:res.data.data
-            })
-        })
-    }
-    handleChange = (e) =>{
-        this.setState({
-            [e.target.name]:e.target.value
-        })
-    }
-    filterBoro = () =>{
-        axios.get('http://localhost:3100/boro/' + this.state.boro)
-        .then((res)=>{
-            this.setState({
-                filtered: res.data.data
-            })
-        })
-    }
-    renderGardenLocations = () =>{
-        let {locations, filtered, display} = this.state;
-        return(
-            <AllLocations
-                locations = {locations}
-                boro = {this.boro}
-                filter = {this.filterBoro}
-                change = {this.handleChange}
-                boroResult = {filtered}
-            />
-        )
-    }
+`
+
+class Gardens extends Component{
     render(){
         return(
-            <div>
-                <h1>Gardens in NYC</h1>
-                    <Route exact path = "/gardens" render = {this.renderGardenLocations} />
-            </div>
+            <Fragment>
+                <Query query={LAUNCH_LOCATIONS}>
+                    {
+                        ({loading, error, data}) => {
+                            if(loading) return <h4>Loading...</h4>
+                            if(error) return console.log(error);
+                            return <Fragment>
+                                {
+                                    data.locations.map(location=>(
+                                        <GardenLocation location={location} />
+                                    ))
+                                }
+                            </Fragment>
+                        }
+                    }
+                </Query>
+            </Fragment>
         )
     }
 }

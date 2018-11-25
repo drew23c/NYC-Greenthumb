@@ -1,42 +1,17 @@
 .gardens{
     align-items:stretch;
 }
-.boroughs{
+.gardens-locations{
     display:flex;
     flex-flow: row wrap;
     justify-content:space-evenly;
-    background-color:#F5FFFA;
-}
-.filter-boro{
-    display:flex;
-}
-.gardens-locations{
     flex-direction:row;
     text-align:left;
     flex-grow:1;
     margin:2%;
-    padding:8%;
-    width:60%;
+    padding:2%;
+    width:20%;
     border:solid 1px lightgreen;
     border-radius:25%;
-    background-color:lightgreen;
-}
-.select-filter{
-    margin-bottom:2%;
-}
-.filter-boro{
-    height: 350px;
-    max-width: 80%;
-    margin: 0 auto;
-    position: relative;
-    overflow: auto;
-    margin-bottom:2%;
-}
-.filter-boro .gardens-filtered{
-    height: 200px;
-    position: relative;
-    height: 100%;
-    padding:0 2% 0 2%;
-    border:solid 1px black;
     background-color:lightgreen;
 }
