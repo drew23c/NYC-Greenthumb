@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/gardensLocations.css';
+import FilterBorough from './FilterBorough';
 
 const AllLocations = ({location:{boro, garden_name, address, latitude, longitude, neighborhoodname, postcode, cross_streets}}) =>{
     return(
