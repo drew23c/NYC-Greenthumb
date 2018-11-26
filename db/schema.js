@@ -58,7 +58,7 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(LocationType),
             args: {boro: {type: GraphQLString}},
             resolve(parent, {boro}){
-                return db.any('SELECT * FROM community WHERE boro = $1', [boro.toUpperCase()])
+                return db.any('SELECT * FROM community WHERE boro = $1', [boro])
                     .then(data=> data)
             }
         }

@@ -5,6 +5,7 @@ import FilterBorough from './FilterBorough';
 const AllLocations = ({location:{boro, garden_name, address, latitude, longitude, neighborhoodname, postcode, cross_streets}}) =>{
     return(
         <div className="gardens">
+            <FilterBorough/>
             <div className="gardens-locations">
                 <a href={`https://www.google.com/maps/place/${address}/@${latitude},${longitude},17z?hl=en&authuser=0`} target="_blank">
                     <h3>{garden_name}</h3>

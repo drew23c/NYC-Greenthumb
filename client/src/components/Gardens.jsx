@@ -18,10 +18,9 @@ const LAUNCH_LOCATIONS = gql `
         }
     }
 `
-
 const LOCATION_BY_BOROUGH = gql `
-    query BOROUGH_QUERY{
-        locationByBorough(boro: "Q"){
+    query BOROUGH_QUERY($boro: String){
+        locationByBorough(boro: $boro){
             boro
             address
             garden_name
@@ -37,7 +36,7 @@ const LOCATION_BY_BOROUGH = gql `
 class Gardens extends Component{
     constructor(){
         super()
-        this.borough = [" ", "Q", "B", "X", "R"]
+        this.boro = [" ", "Q", "B", "X", "R"]
     }
     render(){
         return(
@@ -62,12 +61,19 @@ class Gardens extends Component{
                         ({loading, error, data}) =>{
                             if(loading) return <h4>filtering...</h4>
                             if(error) return console.log(error)
-
                             return <Fragment>
                                 {
-                                    data.locationByBorough.map(f =>(
-                                        <FilterBorough filter={f} />
-                                    ))
+                                    data.locationByBorough.boro ? (
+                                    data.locationByBorough.map(lbb =>(
+                                        <FilterBorough launch={lbb} />
+                                    )))
+                                    :
+                                    (<div>
+                                        <h2>SELECT A BOROUGH:</h2>
+                                        <select>
+                                            {this.boro.map(b=><option>{b}</option>)}
+                                        </select>
+                                    </div>)
                                 }
                             </Fragment>
                         }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FilterBorough = ({boroughs}) =>{
+const FilterBorough = ({launch}) =>{
     return(
         <div>
             
