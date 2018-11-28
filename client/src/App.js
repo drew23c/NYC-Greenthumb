@@ -4,6 +4,7 @@ import './App.css';
 import {Link, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import Gardens from './components/Gardens';
+import FilterBorough from './components/FilterBorough';
 
 class App extends Component {
   render() {
@@ -12,10 +13,12 @@ class App extends Component {
       <nav className="navigation">
         <Link to = "/">Home</Link>{"  "}
         <Link to = "/gardens">Gardens</Link>
+        <Link to = "/filter">Filter</Link>
       </nav>
         <Switch>
           <Route exact path = "/" component = {Home} />
           <Route path = "/gardens" component = {Gardens} />
+          <Route path = "/filter" component = {FilterBorough} />
         </Switch>
       </div>
     );
