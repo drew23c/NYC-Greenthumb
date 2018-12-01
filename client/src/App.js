@@ -4,7 +4,7 @@ import './App.css';
 import {Link, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import Gardens from './components/Gardens';
-import FilterBorough from './components/FilterBorough';
+import FilterResult from './components/FilterResult';
 
 class App extends Component {
   render() {
@@ -18,7 +18,7 @@ class App extends Component {
         <Switch>
           <Route exact path = "/" component = {Home} />
           <Route path = "/gardens" component = {Gardens} />
-          <Route path = "/filter" component = {FilterBorough} />
+          <Route path = "/filter" component = {FilterResult} />
         </Switch>
       </div>
     );

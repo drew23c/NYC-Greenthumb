@@ -1,4 +1,4 @@
-import {gql} from 'apollo-boost';
+import gql from 'graphql-tag';
 
 const locationsQuery = gql`
     {
@@ -16,7 +16,7 @@ const locationsQuery = gql`
     }
 `
 const boroughQuery = gql`
-    query ($boro: String){
+    query LocationQuery($boro: String){
         locationByBorough(boro: $boro){
             id
             boro
@@ -29,5 +29,6 @@ const boroughQuery = gql`
             postcode
         }
     }
-`
+`;
+
 export {locationsQuery, boroughQuery};
