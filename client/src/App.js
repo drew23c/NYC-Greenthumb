@@ -13,12 +13,10 @@ class App extends Component {
       <nav className="navigation">
         <Link to = "/">Home</Link>{"  "}
         <Link to = "/gardens">Gardens</Link>
-        <Link to = "/filter">Filter</Link>
       </nav>
         <Switch>
           <Route exact path = "/" component = {Home} />
           <Route path = "/gardens" component = {Gardens} />
-          <Route path = "/filter" component = {FilterResult} />
         </Switch>
       </div>
     );

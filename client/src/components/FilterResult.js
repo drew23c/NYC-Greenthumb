@@ -26,6 +26,7 @@ export class FilterResult extends Component{
                         console.log(data)
                         return(
                             <Fragment>
+                                <h2>Filter by borough</h2>
                                 <select name="boro" onChange={this.handleChange}>
                                     {this.boro.map(b=><option value={b}>{b}</option>)}
                                 </select>
