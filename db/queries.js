@@ -19,7 +19,8 @@ const getAPI = (url) =>{
             let nta = item.nta;
             let postalCode = item.postcode;
 
-            db.any('INSERT INTO community (propid, bbl, boro, address, garden_name, cross_streets, latitude, longitude, neighborhoodname, nta, postalcode) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)', 
+            db.any('INSERT INTO community (propid, bbl, boro, address, garden_name, cross_streets, latitude, longitude, neighborhoodname, nta, postcode) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)', 
+
             [propid, bbl, boro, address, gardenName, crossStreets, latitude, longitude, neighborhood, nta, postalCode])
             .then(()=>{
             })

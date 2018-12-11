@@ -15,5 +15,5 @@ CREATE TABLE community(
     longitude VARCHAR,
     neighborhoodname VARCHAR,
     nta VARCHAR,
-    postalcode VARCHAR
+    postcode VARCHAR
 );

@@ -1,57 +1,41 @@
-import React, {Component} from 'react';
-import axios from 'axios';
-import {Route} from 'react-router-dom';
-import AllLocations from './GardenLocations';
+import React, {Component, Fragment} from 'react';
+import {Query} from 'react-apollo';
+import {locationsQuery} from '../queries/queries';
+import GardenLocations from './GardenLocations';
+import FilterResult from './FilterResult';
 
 class Gardens extends Component{
     constructor(){
         super()
-        this.boro=['', 'B','M','Q','R','X'],
-        this.state = {
-            locations:[],
-            filtered:[],
+        this.state={
         }
-    }
-    componentDidMount(){
-        axios.get('http://localhost:3100/all')
-        .then(res=>{
-            this.setState({
-                locations:res.data.data
-            })
-        })
-    }
-    handleChange = (e) =>{
-        this.setState({
-            [e.target.name]:e.target.value
-        })
-    }
-    filterBoro = () =>{
-        axios.get('http://localhost:3100/boro/' + this.state.boro)
-        .then((res)=>{
-            this.setState({
-                filtered: res.data.data
-            })
-        })
-    }
-    renderGardenLocations = () =>{
-        let {locations, filtered, display} = this.state;
-        return(
-            <AllLocations
-                locations = {locations}
-                boro = {this.boro}
-                filter = {this.filterBoro}
-                change = {this.handleChange}
-                boroResult = {filtered}
-            />
-        )
-    }
+    } 
     render(){
         return(
-            <div>
-                <h1>Gardens in NYC</h1>
-                    <Route exact path = "/gardens" render = {this.renderGardenLocations} />
-            </div>
-        )
-    }
+            <Fragment>
+                <Query query={locationsQuery}>
+                    {
+                        ({loading, error, data}) => {
+                            if(loading) return <h2>Loading...</h2>
+                            if(error) return console.log(error)
+                            console.log(data)
+                            return(
+                                <Fragment>
+                                    <div className="filter">
+                                        <FilterResult/>
+                                    </div><hr/>
+                                    {
+                                        data.locations.map(l=>(
+                                            <GardenLocations location={l} />
+                                        ))
+                                    }
+                                </Fragment>
+                            )
+                        }
+                    }
+                </Query>
+            </Fragment>
+        )    
+    }   
 }
 export default Gardens;

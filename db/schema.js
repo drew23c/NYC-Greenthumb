@@ -5,6 +5,7 @@ const{
     GraphQLObjectType,
     GraphQLString,
     GraphQLSchema,
+    GraphQLInt,
     GraphQLList,
     GraphQLFloat
 } = graphql;
@@ -12,6 +13,7 @@ const{
 const LocationsType = new GraphQLObjectType({
     name: 'Locations',
     fields: ()=> ({
+        id: {type: GraphQLInt},
         propid: {type: GraphQLString},
         boro: {type: GraphQLString},
         bbl: {type: GraphQLString},
@@ -29,6 +31,7 @@ const LocationsType = new GraphQLObjectType({
 const LocationType = new GraphQLObjectType({
     name: 'Location',
     fields: () => ({
+        id: {type: GraphQLInt},
         propid: {type: GraphQLString},
         boro:{type: GraphQLString},
         bbl: {type: GraphQLString},
@@ -58,7 +61,7 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(LocationType),
             args: {boro: {type: GraphQLString}},
             resolve(parent, {boro}){
-                return db.any('SELECT * FROM community WHERE boro = $1', [boro.toUpperCase()])
+                return db.any('SELECT * FROM community WHERE boro = $1', [boro])
                     .then(data=> data)
             }
         }
