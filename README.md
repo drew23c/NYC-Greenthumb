@@ -20,6 +20,7 @@ Gardens:
 * Axios
 * Express
 * PostgreSQL
+* GraphQL
 * [NYC Greenthumb Community Gardend API](https://data.cityofnewyork.us/Environment/NYC-Greenthumb-Community-Gardens/ajxm-kzmj)
 
 ## Installation
