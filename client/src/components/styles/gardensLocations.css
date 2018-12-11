@@ -2,9 +2,6 @@
     align-items:stretch;
 }
 .gardens-locations{
-    display:flex;
-    flex-flow: row wrap;
-    justify-content:space-evenly;
     flex-direction:row;
     text-align:left;
     flex-grow:1;
