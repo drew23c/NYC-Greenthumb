@@ -24,10 +24,8 @@ class Gardens extends Component{
                                     <div className="filter">
                                         <FilterResult/>
                                     </div><hr/>
-                                    {
-                                        data.locations.map(l=>(
-                                            <GardenLocations location={l} />
-                                        ))
+                                    {                                       
+                                            <GardenLocations locations={data.locations} />
                                     }
                                 </Fragment>
                             )
