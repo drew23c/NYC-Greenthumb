@@ -1,17 +1,16 @@
 .filter{
-    align-items:stretch;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    height:100%;
+    background-size: cover;
+    font-size:100%;
 }
 .filtered-boro{
-    display:flex;
-    flex-flow: row wrap;
-    justify-content:space-evenly;
-    flex-direction:row;
-    text-align:left;
-    flex-grow:1;
     margin:2%;
     padding:2%;
-    width:20%;
     border:solid 1px lightgreen;
     border-radius:25%;
     background-color:lightgreen;
+    height:5%;
 }
