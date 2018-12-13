@@ -18,12 +18,11 @@ class Gardens extends Component{
                         ({loading, error, data}) => {
                             if(loading) return <h2>Loading...</h2>
                             if(error) return console.log(error)
-                            console.log(data)
                             return(
                                 <Fragment>
                                     <div className="filter">
                                         <FilterResult/>
-                                    </div><hr/>
+                                    </div>
                                     {                                       
                                             <GardenLocations locations={data.locations} />
                                     }

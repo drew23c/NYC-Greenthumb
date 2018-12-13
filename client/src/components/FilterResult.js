@@ -7,7 +7,9 @@ export class FilterResult extends Component{
     constructor(){
         super()
         this.boro = ["", "B", "M", "Q", "R", "X"]
-        this.state = {}
+        this.state = {
+            boro:''
+        }
     }
     handleChange = (e) =>{
         this.setState({
@@ -15,7 +17,7 @@ export class FilterResult extends Component{
         })
     }
     render(){
-        let boro = this.state.boro
+        let {boro} = this.state
         return(
             <Fragment>
                 <Query query={boroughQuery} variables={{boro}}>
@@ -23,7 +25,6 @@ export class FilterResult extends Component{
                     ({loading, error, data}) => {
                         if(loading) return <h2>Filtering...</h2>
                         if(error) return console.log(error)
-                        console.log(data)
                         return(
                             <Fragment>
                                 <h2>Filter by borough</h2>

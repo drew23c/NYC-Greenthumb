@@ -4,7 +4,7 @@
   height:100vh;
   background-color:#F5FFFA;
   font-family: 'Noto Sans', sans-serif;
-  min-height:100vh;
+  height:100%;
 }
 .navigation a{
   font-size:140%;
