@@ -5,11 +5,6 @@ import GardenLocations from './GardenLocations';
 import FilterResult from './FilterResult';
 
 class Gardens extends Component{
-    constructor(){
-        super()
-        this.state={
-        }
-    } 
     render(){
         return(
             <Fragment>
