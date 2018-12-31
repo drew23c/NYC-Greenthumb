@@ -2,22 +2,19 @@ import React, {Component, Fragment} from 'react';
 import {Query} from 'react-apollo';
 import {boroughQuery} from '../queries/queries';
 import './styles/filterResults.css';
+import {connect} from 'react-redux';
+import {selectBoro} from '../store/actions/index';
 
-export class FilterResult extends Component{
+class FilterResult extends Component{
     constructor(){
         super()
         this.boro = ["", "B", "M", "Q", "R", "X"]
-        this.state = {
-            boro:''
-        }
     }
     handleChange = (e) =>{
-        this.setState({
-            [e.target.name]:e.target.value
-        })
+        this.props.onBoroLocation(e.target.value);
     }
     render(){
-        let {boro} = this.state
+        let {boro} = this.props
         return(
             <Fragment>
                 <Query query={boroughQuery} variables={{boro}}>
@@ -56,4 +53,17 @@ export class FilterResult extends Component{
         )
     }
 }
-export default FilterResult;
+
+const mapStateToProps = (state) => {
+    return {
+      boro: state.boro.boro 
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      onBoroLocation: (boro) => dispatch(selectBoro(boro))
+    }
+  }
+  
+export default connect(mapStateToProps, mapDispatchToProps)(FilterResult);
