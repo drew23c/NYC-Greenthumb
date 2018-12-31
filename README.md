@@ -17,6 +17,7 @@ Gardens:
 ## Technologies used:
 
 * React JS
+* React-Redux
 * Axios
 * Express
 * PostgreSQL
