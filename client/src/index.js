@@ -10,7 +10,7 @@ import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 
 const client = new ApolloClient({
-    uri: 'http://localhost:3100/graphql'
+    uri: 'http://localhost:4000/graphql'
 })
 
 const store = configureStore();
