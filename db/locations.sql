@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS locations;
-CREATE DATABASE locations;
-
-\c locations;
-
 CREATE TABLE community(
     id SERIAL PRIMARY KEY,
     propid VARCHAR,
