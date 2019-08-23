@@ -14,7 +14,7 @@
     "debug": "~4.1.1",
     "express": "~4.15.5",
     "express-graphql": "^0.7.1",
-    "graphql": "^14.1.1",
+    "graphql": "^14.5.0",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "pg-promise": "^8.6.3",
